@@ -21,4 +21,4 @@ app.get('/ask', function (req, res) {
 
 app.use('/',express.static('public'));
  
-app.listen(3000)
+app.listen(process.env.OPENSHIFT_NODEJS_PORT || 3000)

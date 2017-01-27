@@ -119,3 +119,10 @@ width: 1em;
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
+button.ask {
+  float:right;
+  background:#eee;
+  color:#333;
+  border:solid 1px #333;
+}
+

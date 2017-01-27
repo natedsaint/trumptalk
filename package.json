@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "Make Trump Talk Again",
   "main": "app.js",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.14.0",
+    "maba": "0.0.9"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

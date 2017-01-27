@@ -1,0 +1,117 @@
+/* preload images */
+body::after{
+    position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+    content:url(Tromp.png) url(Tromp_idle.png);
+}
+body {
+  background:#eee url(wall.png);
+  font-family:"Cabin";
+}
+h2 {
+  font-size:40px;
+  margin:0 0 10px 0;
+}
+.trumpatar {
+  width:320px;
+  height:320px;
+  animation:idle infinite 4s steps(1,end);
+  background-image:url('Tromp_idle.png');
+  background-size:640px;
+  background-repeat:no-repeat;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+  border:solid 8px #666;
+  box-shadow:inset 0 0 30px rgba(0,0,0,0.4);
+  float:left;
+}
+.trumpatar.talking {
+  background-image:url('Tromp.png');
+  animation:talking infinite 0.3s steps(1,end);
+}
+@keyframes idle {
+  0% { background-position:0px 0px;}
+  90% { background-position:-320px 0px;}
+  92% { background-position:0px -320px;}
+  94% { background-position:-320px 0px;}
+  96% { background-position:0px 0px;}
+}
+@keyframes talking {
+  0% { background-position:0px 0px;}
+  25% { background-position:-320px 0px;}
+  50% { background-position:0px -320px;}
+  75% { background-position:-320px 0px;}
+}
+article {
+  width:800px;
+  margin:30px auto;
+  padding:20px;
+  background:#fff;
+  overflow:hidden;
+  border:solid 8px #999;
+  box-shadow:0 0 30px rgba(0,0,0,0.5);
+}
+.talkBox {
+  width:420px;
+  float:right;
+  padding:15px;
+  height:320px;
+  overflow:auto;
+  font-size:16px;
+}
+textarea {
+  margin:10px -10px;
+  width:780px;
+  clear:both;
+  padding:20px;
+}
+.talkBox div {
+  padding:10px;
+  margin:0 0 10px 0;
+}
+.question {
+  background:#A00;
+  color:#fff;
+  position:relative;
+}
+.question::before {
+  position:absolute;
+  right:-10px;
+  top:0px;
+  content:'';
+  width: 0px;
+  height: 0px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #A00;
+}
+.answer {
+  background:#00A;
+  color:#fff;
+  position:relative;
+}
+.answer::before {
+  position:absolute;
+  left:-10px;
+  bottom:0px;
+  content:'';
+  width: 0px;
+  height: 0px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #00A;
+}
+
+.talkBox::-webkit-scrollbar {
+width: 1em;
+}
+
+.talkBox::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+}
+
+.talkBox::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}

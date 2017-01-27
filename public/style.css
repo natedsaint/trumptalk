@@ -8,8 +8,12 @@ body {
   font-family:"Cabin";
 }
 h2 {
-  font-size:40px;
-  margin:0 0 10px 0;
+  font-size:60px;
+  width:800px;
+  margin:30px auto;
+  color:#eef;
+  text-shadow:0 0 20px #00f;
+  text-align:center;
 }
 .trumpatar {
   width:320px;

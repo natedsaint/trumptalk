@@ -17,7 +17,7 @@ function askQuestion() {
 
 function handleResponse(res) {
   if (xhr.readyState === XMLHttpRequest.DONE) {
-    var answer = JSON.parse(xhr.responseText).answer;
+    var answer = JSON.parse(xhr.responseText).answer.response;
     if (!answer) {
       answer = JSON.parse(xhr.responseText).error;
     }

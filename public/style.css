@@ -1,7 +1,7 @@
 /* preload images */
 body::after{
     position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
-    content:url(Tromp.png) url(Tromp_idle.png) url(Tromprage.png) url(Smug.png) url(Trumpromat.png);
+    content:url(Tromp.png) url(Tromp_idle.png) url(Tromprage.png) url(Smug.png) url(Trompromat.png);
 }
 body {
   background:#eee url(wall.png);

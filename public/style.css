@@ -1,7 +1,7 @@
 /* preload images */
 body::after{
     position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
-    content:url(Tromp.png) url(Tromp_idle.png);
+    content:url(Tromp.png) url(Tromp_idle.png) url(Tromprage.png) url(Smug.png) url(Trumpromat.png);
 }
 body {
   background:#eee url(wall.png);
@@ -34,6 +34,15 @@ h2 {
   background-image:url('Tromp.png');
   animation:talking infinite 0.3s steps(1,end);
 }
+.trumpatar.talking.kompromat {
+  background-image:url('Trompromat.png');
+}
+.trumpatar.talking.smug {
+  background-image:url('Smug.png');
+}
+.trumpatar.talking.angry {
+  background-image:url('Tromprage.png');
+}
 @keyframes idle {
   0% { background-position:0px 0px;}
   90% { background-position:-320px 0px;}
@@ -47,6 +56,15 @@ h2 {
   50% { background-position:0px -320px;}
   75% { background-position:-320px 0px;}
 }
+.talkBox div.visible {
+  transition:opacity 1s;
+  opacity:1;
+}
+
+.talkBox .answer.visible {
+  transition-delay:0.5s;
+}
+
 article {
   width:800px;
   margin:30px auto;
@@ -67,12 +85,18 @@ article {
 textarea {
   margin:10px -10px;
   width:780px;
+.visible {
+  opacity:1;
+}
+
   clear:both;
   padding:20px;
 }
 .talkBox div {
+  opacity:0;
   padding:10px;
   margin:0 0 10px 0;
+  animation:fadein 1s;
 }
 .question {
   background:#A00;

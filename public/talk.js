@@ -3,6 +3,7 @@ var question;
 var talkBox = document.querySelector(".talkBox");
 var trumpatar = document.querySelector(".trumpatar");
 var timer;
+var id = 0;
 
 function askQuestion() {
   question = document.querySelector(".userQuestion").value;
@@ -17,21 +18,33 @@ function askQuestion() {
 
 function handleResponse(res) {
   if (xhr.readyState === XMLHttpRequest.DONE) {
-    var answer = JSON.parse(xhr.responseText).answer.response;
+    id++;
+    var res = JSON.parse(xhr.responseText);
+    var answer = res.answer.response;
+    var mood = res.answer.mood;
+    
     if (!answer) {
       answer = JSON.parse(xhr.responseText).error;
     }
-    talkBox.innerHTML += '<div class="question"> ' + question +  '</div>';
-    talkBox.innerHTML += '<div class="answer"> ' + answer + '</div>';
+    talkBox.innerHTML += '<div id="question-' + id + '" class="question"> ' + question +  '</div>';
+    talkBox.innerHTML += '<div id="answer-' + id + '" class="answer"> ' + answer + '</div>';
     trumpatar.classList.add("talking");
+    if (mood) {
+      trumpatar.classList.add(mood);
+    }    
     clearTimeout(timer);
     timer = setTimeout(stopTalking,5000);
     talkBox.scrollTop = talkBox.scrollHeight;
+    document.querySelector("#question-"+id).classList.add("visible");
+    document.querySelector("#answer-"+id).classList.add("visible");
   }
 }
 
 function stopTalking() {
   trumpatar.classList.remove("talking");
+  trumpatar.classList.remove("kompromat");
+  trumpatar.classList.remove("angry");
+  trumpatar.classList.remove("smug");
 }
 
 function keyPress(event) {

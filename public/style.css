@@ -3,6 +3,10 @@ body::after{
     position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
     content:url(Tromp.png) url(Tromp_idle.png) url(Tromprage.png) url(Smug.png) url(Trompromat.png);
 }
+/* get rid of glowy outline */
+
+textarea, input, button { outline: none; }
+
 body {
   background:#eee url(wall.png);
   font-family:"Cabin";
@@ -84,14 +88,22 @@ article {
 }
 textarea {
   margin:10px -10px;
-  width:780px;
+  width:700px;
+  float:left;
+  clear:both;
+  padding:20px;
+  border:solid 4px #333;
+  resize:none;
+}
+
+textarea:focus {
+  border:solid 4px #003;
+}
+
 .visible {
   opacity:1;
 }
 
-  clear:both;
-  padding:20px;
-}
 .talkBox div {
   opacity:0;
   padding:10px;
@@ -145,8 +157,13 @@ width: 1em;
 }
 button.ask {
   float:right;
+  vertical-align:middle;
   background:#eee;
   color:#333;
   border:solid 1px #333;
+  padding:10px;
+  font-size:16px;
+  text-transform:uppercase;
+  margin:26px 0 0 0;
 }
 

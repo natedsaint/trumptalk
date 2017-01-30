@@ -21,9 +21,15 @@ app.get('/ask', function (req, res) {
 
 app.use('/',express.static('public'));
 
-var ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+var ip = process.env.OPENSHIFT_NODEJS_IP;
 var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
 
-app.listen(port, ip, function() {
-  console.log("Listening on " + ip + ":" + port);
-});
+if (ip) {
+  app.listen(port, ip, function() {
+    console.log("Listening on " + ip + ":" + port);
+  });
+} else {
+  app.listen(port, function() {
+    console.log("Listening on public ip at port " + port);
+  });
+}

@@ -1,7 +1,7 @@
 # Trump Talk 
 
 <p align="center">
-  <img src="/public/Trump_Talk.jpg">
+  <img src="/public/img/Trump_Talk.jpg">
 </p>
 
 ## See it live

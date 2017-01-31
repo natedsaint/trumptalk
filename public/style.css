@@ -192,6 +192,7 @@ button.ask {
 footer a {
   color:#fff;
   text-decoration:none;
+  text-shadow:0 0 10px #000;
 }
 
 footer a:hover {

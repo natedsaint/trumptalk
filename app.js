@@ -19,6 +19,21 @@ app.get('/ask', function (req, res) {
   
 });
 
+app.get('/slackask', function (req, res) {
+  var answer;
+  var error;
+  if (req.query.text) {
+    answer = bot.ask(req.query.text);
+  } else {
+    error = "Sad! Don't understand this"; 
+  }
+  if (error) {
+    res.status(400).send(error);
+  } else {
+    res.send(answer.response);
+  }
+});  
+
 app.use('/',express.static('public'));
 
 var ip = process.env.OPENSHIFT_NODEJS_IP;

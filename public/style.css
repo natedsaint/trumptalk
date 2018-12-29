@@ -34,7 +34,6 @@ h2 a {
   animation:idle infinite 4s steps(1,end);
   background-image:url('img/Tromp_idle.png');
   background-size:640px;
-  background-repeat:no-repeat;
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: -o-crisp-edges;
